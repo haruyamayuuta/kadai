@@ -24,11 +24,11 @@ fun Application.configureRouting() {
             val id = call.parameters["id"]
             call.respondText("Hello $id")
         }
-        get("/GET/form") {
+        get("/form") {
             val sampleUser = User(1, "John")
             call.respond(ThymeleafContent("form", mapOf("user" to sampleUser)))
         }
-        route("/POST/result"){
+        route("/result"){
             post{
                 val post = call.receiveParameters()
                 val na: String
